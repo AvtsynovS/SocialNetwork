@@ -1,0 +1,10 @@
+.mainContent {
+  background-color: #c8e8ee;
+  border-radius: 10px;
+
+  & div {
+    background-position: center center;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}

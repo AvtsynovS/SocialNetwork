@@ -1,0 +1,55 @@
+.dialogs {
+  background-color: rgb(43, 6, 54);
+  color: rgb(50, 235, 33);
+}
+
+.dialogsItems {
+  padding: 10px;
+  border: solid 2px red;
+  margin: 20px 10px;
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    max-width: 20px;
+
+    .image {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 5px 1px grey;
+    }
+  }
+
+  .userInfo {
+    margin: 15px 0;
+    align-items: center;
+    display: flex;
+  }
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+
+  .messages {
+    padding: 10px 0;
+  }
+
+  .addMessage {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+
+    .sendArea {
+      border-radius: 20px;
+      padding: 5px 15px;
+      min-width: 90%;
+    }
+
+    .sentBtn {
+      border-radius: 50%;
+    }
+  }
+}
