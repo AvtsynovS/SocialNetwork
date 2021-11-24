@@ -1,6 +1,5 @@
 .dialogs {
-  background-color: rgb(43, 6, 54);
-  color: rgb(50, 235, 33);
+  background-color: #445854;
 }
 
 .dialogsItems {
@@ -43,12 +42,14 @@
     margin: 20px 0;
 
     .sendArea {
+      background-color: #feeffe;
       border-radius: 20px;
-      padding: 5px 15px;
+      padding: 15px 15px 0;
       min-width: 90%;
     }
 
-    .sentBtn {
+    .sendBtn {
+      background-color: #f2c69a;
       border-radius: 50%;
     }
   }

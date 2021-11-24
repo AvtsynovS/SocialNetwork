@@ -68,7 +68,7 @@ const Dialogs = (props) => {
                   value={props.state.messagePage.newMessageText}
                   onKeyDown={onKeyDown}
                 ></textarea>
-                <button className={styles.sentBtn} onClick={addNewMessage}>
+                <button className={styles.sendBtn} onClick={addNewMessage}>
                   send
                 </button>
               </div>

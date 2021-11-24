@@ -25,27 +25,23 @@ const Posts = (props) => {
   return (
     <div className={styles.postArea}>
       <h3>New post</h3>
-      <div>
-        <div>
-          <textarea
-            placeholder="enter you post..."
-            onChange={onPostChange}
-            value={props.newPostText}
-            onKeyDown={onKeyDown}
-          />
-        </div>
-        <div>
-          <button id="btn" onClick={addNewPost}>
-            Add post
-          </button>
-        </div>
+      <div className={styles.addPost}>
+        <textarea
+          className={styles.sendArea}
+          placeholder="enter you post..."
+          onChange={onPostChange}
+          value={props.newPostText}
+          onKeyDown={onKeyDown}
+        />
+        <button id="btn" className={styles.addBtn} onClick={addNewPost}>
+          Add post
+        </button>
       </div>
       {props.posts.map((item) => (
         <div key={item.id}>
           <Post message={item.message} likesCount={item.likesCount} />
         </div>
       ))}
-      ;
     </div>
   );
 };

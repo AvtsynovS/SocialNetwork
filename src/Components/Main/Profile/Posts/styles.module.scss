@@ -1,3 +1,22 @@
 .postArea {
-  margin: 20px;
+  margin: 20px 20px 0;
+  color: #f0f0f0;
+}
+
+.addPost {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  .sendArea {
+    border-radius: 20px;
+    padding: 15px 15px 0;
+    min-width: 90%;
+    background-color: #feeffe;
+  }
+}
+
+.addBtn {
+  background-color: #f2c69a;
+  border-radius: 50px;
 }
