@@ -17,7 +17,10 @@ const App = (props) => {
       <GridContainer>
         <GridRow>
           <GridColumn size={12} offset={0}>
-            <Header />
+            <Header
+            theme={props.state.theme}
+            dispatch={props.dispatch}
+            />
           </GridColumn>
         </GridRow>
         <GridRow>

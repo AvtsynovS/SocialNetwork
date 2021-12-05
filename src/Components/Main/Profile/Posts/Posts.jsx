@@ -1,5 +1,6 @@
 import React from "react";
 import { addPost, updatePostText } from "../../../../redux/profileReducer";
+import Button from "../../../../ui/Button/Button";
 import Post from "./Post/Post";
 import styles from "./styles.module.scss";
 
@@ -7,6 +8,7 @@ import styles from "./styles.module.scss";
 
 const Posts = (props) => {
   let addNewPost = (event) => {
+    console.log();
     props.dispatch(addPost());
     event.target.blur();
   };
@@ -33,9 +35,9 @@ const Posts = (props) => {
           value={props.newPostText}
           onKeyDown={onKeyDown}
         />
-        <button id="btn" className={styles.addBtn} onClick={addNewPost}>
+        <Button className={styles.btn} onClick={addNewPost}>
           Add post
-        </button>
+        </Button>
       </div>
       {props.posts.map((item) => (
         <div key={item.id}>
