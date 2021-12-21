@@ -1,7 +1,7 @@
 import messageReducer from "./messageReducer";
 import profileReducer from "./profileReducer";
 
-const store = {
+const oldStore = {
   _state: {
     users: [
       {
@@ -87,4 +87,4 @@ const store = {
   },
 };
 
-export default store;
+export default oldStore;

@@ -34,8 +34,9 @@ const App = (props) => {
                 path="/"
                 render={() => (
                   <Profile
-                    profilePage={props.state.profilePage}
-                    dispatch={props.dispatch}
+                    // profilePage={props.state.profilePage}
+                    // dispatch={props.dispatch}
+                    // store={props.store}
                   />
                 )}
               />
@@ -43,8 +44,9 @@ const App = (props) => {
                 path="/profile"
                 render={() => (
                   <Profile
-                    profilePage={props.state.profilePage}
-                    dispatch={props.dispatch}
+                    // profilePage={props.state.profilePage}
+                    // dispatch={props.dispatch}
+                    // store={props.store}
                   />
                 )}
               />
@@ -52,13 +54,9 @@ const App = (props) => {
                 path="/dialogs"
                 render={() => (
                   <Dialogs
-                    //navigation={props.state.navigation}
-                    //messagePage={props.state.messagePage} === undefined
-                    state={props.state}
-                    dispatch={props.dispatch}
-                    // ПОДУМАТЬ КАК ПРАВИЛЬНО ПЕРЕДАТЬ?!!!!
-                    // users={props.state.users}
-                    // messagesPage={props.state.messagesPage}
+                    // messagePage={props.state.messagePage}
+                    // navigation={props.state.navigation}
+                    // dispatch={props.dispatch}
                   />
                 )}
               />

@@ -1,5 +1,4 @@
 import React from "react";
-import { addPost, updatePostText } from "../../../../redux/profileReducer";
 import Button from "../../../../ui/Button/Button";
 import Post from "./Post/Post";
 import styles from "./styles.module.scss";
@@ -8,19 +7,20 @@ import styles from "./styles.module.scss";
 
 const Posts = (props) => {
   let addNewPost = (event) => {
-    console.log();
-    props.dispatch(addPost());
+    props.addPost();
     event.target.blur();
   };
 
   let onPostChange = (event) => {
     let text = event.target.value;
-    props.dispatch(updatePostText(text));
+    props.updatePostText(text);
+    // props.dispatch(updatePostText(text));
   };
 
   const onKeyDown = (event) => {
     if (event.keyCode === 13) {
-      props.dispatch(addPost());
+      props.addPost();
+      // props.dispatch(addPost());
     }
   };
 

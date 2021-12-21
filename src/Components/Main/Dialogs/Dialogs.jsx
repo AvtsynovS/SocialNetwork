@@ -15,8 +15,8 @@ const Dialogs = (props) => {
   };
 
   const onChangeMessage = (event) => {
-    let textMessage = event.target.value;
-    props.dispatch(updateMessageText(textMessage));
+    let text = event.target.value;
+    props.dispatch(updateMessageText(text));
   };
 
   const onKeyDown = (event) => {
@@ -31,7 +31,7 @@ const Dialogs = (props) => {
         <GridRow>
           <GridColumn size={3}>
             <div className={styles.dialogsItems}>
-              {props.state.navigation.users.map((item) => {
+              {props.navigation.users.map((item) => {
                 return (
                   <div className={styles.userInfo} key={item.id}>
                     <div className={styles.avatar}>
@@ -54,7 +54,7 @@ const Dialogs = (props) => {
           <GridColumn size={9}>
             <div className={styles.chat}>
               <div className={styles.messages}>
-                {props.state.messagePage.messages.map((item) => (
+                {props.messagePage.messages.map((item) => (
                   <div key={item.id}>
                     <Message message={item.message} />
                   </div>
