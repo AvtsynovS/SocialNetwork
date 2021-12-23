@@ -4,12 +4,12 @@ import { GridColumn, GridRow, GridContainer } from "./ui/Grid";
 import Header from "./Components/Header/Header";
 import Navigation from "./Components/Navigation/Navigation";
 import Profile from "./Components/Main/Profile/Profile";
-import Dialogs from "./Components/Main/Dialogs/Dialogs";
 import News from "./Components/Main/News/News";
 import Music from "./Components/Main/Music/Music";
 import Setting from "./Components/Main/Setting/Setting";
 import { Route, Switch } from "react-router";
 import NotFound from "./Components/Main/NotFound/NotFound";
+import DialogsContainer from "./Components/Main/Dialogs/DialogsContainer";
 
 const App = (props) => {
   return (
@@ -17,48 +17,20 @@ const App = (props) => {
       <GridContainer>
         <GridRow>
           <GridColumn size={12} offset={0}>
-            <Header
-            theme={props.state.theme}
-            dispatch={props.dispatch}
-            />
+            <Header theme={props.state.theme} dispatch={props.dispatch} />
           </GridColumn>
         </GridRow>
         <GridRow>
           <GridColumn size={2}>
-            <Navigation friendsBoard={props.state.navigation} />
+            <Navigation />
           </GridColumn>
           <GridColumn size={10}>
             <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => (
-                  <Profile
-                    // profilePage={props.state.profilePage}
-                    // dispatch={props.dispatch}
-                    // store={props.store}
-                  />
-                )}
-              />
-              <Route
-                path="/profile"
-                render={() => (
-                  <Profile
-                    // profilePage={props.state.profilePage}
-                    // dispatch={props.dispatch}
-                    // store={props.store}
-                  />
-                )}
-              />
+              <Route exact path="/" render={() => <Profile />} />
+              <Route path="/profile" render={() => <Profile />} />
               <Route
                 path="/dialogs"
-                render={() => (
-                  <Dialogs
-                    // messagePage={props.state.messagePage}
-                    // navigation={props.state.navigation}
-                    // dispatch={props.dispatch}
-                  />
-                )}
+                render={() => <DialogsContainer store={props.store} />}
               />
               <Route path="/news" component={News} />
               <Route path="/music" component={Music} />

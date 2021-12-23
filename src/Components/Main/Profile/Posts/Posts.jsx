@@ -14,13 +14,11 @@ const Posts = (props) => {
   let onPostChange = (event) => {
     let text = event.target.value;
     props.updatePostText(text);
-    // props.dispatch(updatePostText(text));
   };
 
   const onKeyDown = (event) => {
     if (event.keyCode === 13) {
       props.addPost();
-      // props.dispatch(addPost());
     }
   };
 

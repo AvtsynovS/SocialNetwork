@@ -7,17 +7,17 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./redux/store";
 import { Provider } from "react-redux";
 
+
 let rerenderTree = () => {
   // let rerenderTree = (state)*
+
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <Provider store={store}>
           <App
-          // store={store}
-          // state={state}*
-          // state={store.getState()}
-          // dispatch={store.dispatch.bind(store)}
+            state={store.getState()}
+            // state={state}*
           />
         </Provider>
       </BrowserRouter>
