@@ -20,12 +20,17 @@ const messageReducer = (state = initialState, action) => {
         id: 7,
         message: state.newMessageText,
       };
-      state.messages.push(newMessage);
-      state.newMessageText = "";
-      return state;
+
+      return {
+        ...state,
+        messages: [...state.messages, newMessage],
+        newMessageText: "",
+      }
     case UPDATE_MESSAGE_TEXT:
-      state.newMessageText = action.newTextMessage;
-      return state;
+      return {
+        ...state,
+        newMessageText: action.newMessageText,
+      }
     default:
       return state;
   }
@@ -34,7 +39,7 @@ const messageReducer = (state = initialState, action) => {
 export const addMessage = () => ({ type: ADD_MESSAGE });
 export const updateMessageText = (text) => ({
   type: UPDATE_MESSAGE_TEXT,
-  newTextMessage: text,
+  newMessageText: text,
 });
 
 export default messageReducer;
