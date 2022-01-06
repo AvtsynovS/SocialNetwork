@@ -1,7 +1,7 @@
-import React from "react";
-import Button from "../../../../ui/Button/Button";
-import Post from "./Post/Post";
-import styles from "./styles.module.scss";
+import React from 'react';
+import Button from '../../../../ui/Button/Button';
+import Post from './Post/Post';
+import styles from './styles.module.scss';
 
 // добавить валидацию textarea
 
@@ -28,7 +28,7 @@ const Posts = (props) => {
       <div className={styles.addPost}>
         <textarea
           className={styles.sendArea}
-          placeholder="enter you post..."
+          placeholder='enter you post...'
           onChange={onPostChange}
           value={props.newPostText}
           onKeyDown={onKeyDown}
