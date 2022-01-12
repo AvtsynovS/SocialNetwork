@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 const FriendsBoard = (props) => {
-  console.log(props);
   return (
     <div className={styles.friends}>
       {props.users.map((item) => {

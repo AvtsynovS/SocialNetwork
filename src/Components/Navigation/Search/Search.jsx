@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../ui/Button/Button';
 import { GridColumn, GridContainer, GridRow } from '../../../ui/Grid';
 import styles from './styles.module.scss';
 
@@ -8,53 +9,57 @@ const Search = (props) => {
       <h3>Users</h3>
       <GridContainer>
         <GridRow>
-          <GridColumn size={2} offset={0}>
-            {props.users.map((item) => {
-              return (
-                <div className={styles.avatar} key={item.id}>
-                  <img
-                    src={item.avatar}
-                    alt='avatar'
-                    className={styles.image}
-                  />
-                  <button>subscribe</button>
-                </div>
-              );
-            })}
-          </GridColumn>
-          <GridColumn size={10} offset={0}>
-            {props.users.map((item) => {
-              return (
-                <div className={styles.usersInfo}>
-                  <div>
-                    <span>{`${item.name} ${item.secondName}`}</span>
-                    <span>country</span>
+          {props.users.map((user) => {
+            return (
+              <div className={styles.userInfo} key={user.id}>
+                <GridColumn size={1} offset={0}>
+                  <div className={styles.avatar}>
+                    <img
+                      src={user.avatar}
+                      alt='avatar'
+                      className={styles.image}
+                    />
+                    {user.subscribe ? (
+                      <Button
+                        className={styles.UnsubscribeBtn}
+                        onClick={() => {
+                          props.toggleSubscribe(user.id);
+                        }}
+                      >
+                        Unsubscribe
+                      </Button>
+                    ) : (
+                      <Button
+                        className={styles.SubscribeBtn}
+                        onClick={() => {
+                          props.toggleSubscribe(user.id);
+                        }}
+                      >
+                        Subscribe
+                      </Button>
+                    )}
                   </div>
-                  <div>
-                    <span>Status</span>
-                    <span>City</span>
+                </GridColumn>
+                <GridColumn size={11} offset={0}>
+                  <div className={styles.usersInfo}>
+                    <div>
+                      <span>{`${user.name} ${user.secondName}`}</span>
+                      <span>country</span>
+                    </div>
+                    <div>
+                      <span>Status</span>
+                      <span>City</span>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </GridColumn>
+                </GridColumn>
+              </div>
+            );
+          })}
         </GridRow>
       </GridContainer>
-      {/* <ul className={styles.searchMenu}>
-      <li>Users</li>
-      <li>Music</li>
-      <li>News</li>
-    </ul> 
-    
-    верстку переделать!
-    <div className={mainScreen}>
-      <div className={user}>
-        <div className="userAva"></div>
-        <div className="userInfo"></div>
+      <div className={styles.showBtn}>
+        <Button>Show More...</Button>
       </div>
-    </div>
-    
-    */}
     </div>
   );
 };

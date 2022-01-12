@@ -1,8 +1,8 @@
-import React from "react";
-import { GridColumn, GridContainer, GridRow } from "../../../ui/Grid";
-import DialogItem from "./DialogItem/DialogItem";
-import Message from "./Message/Message";
-import styles from "./styles.module.scss";
+import React from 'react';
+import { GridColumn, GridContainer, GridRow } from '../../../ui/Grid';
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
+import styles from './styles.module.scss';
 
 //User not found... - реализовать.
 // добавить валидацию textarea
@@ -37,7 +37,7 @@ const Dialogs = (props) => {
                       <img
                         className={styles.image}
                         src={item.avatar}
-                        alt="avatar"
+                        alt='avatar'
                       />
                     </div>
                     <DialogItem
@@ -61,7 +61,7 @@ const Dialogs = (props) => {
               </div>
               <div className={styles.addMessage}>
                 <textarea
-                  placeholder="enter you message..."
+                  placeholder='enter you message...'
                   className={styles.sendArea}
                   onChange={onChangeMessage}
                   value={props.newMessageText}
