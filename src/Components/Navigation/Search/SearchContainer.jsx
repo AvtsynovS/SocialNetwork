@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setUsers, toggleSubscribe } from '../../../redux/searchReducer';
-import Search from './Search';
+import SearchUsers from './SearchUsers';
 
 let mapStateToProps = (state) => {
   return {
@@ -19,6 +19,9 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-const SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search);
+const SearchContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchUsers);
 
 export default SearchContainer;

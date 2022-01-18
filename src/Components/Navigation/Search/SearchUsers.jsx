@@ -1,18 +1,20 @@
-import axios from 'axios';
 import React from 'react';
+import axios from 'axios';
 import Button from '../../../ui/Button/Button';
 import { GridColumn, GridContainer, GridRow } from '../../../ui/Grid';
 import userPhoto from '../../../images/men.png';
 import styles from './styles.module.scss';
 
 class SearchUsers extends React.Component {
-  getUsers = () => {
+  constructor(props) {
+    super(props);
+
     axios
       .get('https://social-network.samuraijs.com/api/1.0/users')
       .then((response) => {
         this.props.setUsers(response.data.items);
       });
-  };
+  }
 
   render() {
     return (
