@@ -26,10 +26,6 @@
       box-shadow: 0 0 5px 1px grey;
       margin-bottom: 20px;
     }
-
-    & button {
-      cursor: pointer;
-    }
   }
 }
 .showBtn {
@@ -41,13 +37,27 @@
 .userInfo {
   display: flex;
   width: 100%;
-  margin: 10px 20px;
+  margin: 20px;
   padding: 15px 10px;
   border: 2px solid red;
   border-radius: 5px;
+
+  .userInfoTop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .userInfoBottom {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-.SubscribeBtn {
+button {
+  cursor: pointer;
+}
+
+.subscribeBtn {
   border-radius: 25px;
   padding: 5px 18px;
   font-weight: 700;
@@ -55,7 +65,7 @@
   background: linear-gradient(to top, #c6e081, #a5cd5b);
 }
 
-.UnsubscribeBtn {
+.unsubscribeBtn {
   border-radius: 25px;
   padding: 5px 10px;
   font-weight: 700;

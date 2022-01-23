@@ -6,9 +6,7 @@ import userPhoto from '../../../images/men.png';
 import styles from './styles.module.scss';
 
 class SearchUsers extends React.Component {
-  constructor(props) {
-    super(props);
-
+  componentDidMount() {
     axios
       .get('https://social-network.samuraijs.com/api/1.0/users')
       .then((response) => {
@@ -25,7 +23,7 @@ class SearchUsers extends React.Component {
             {this.props.users.map((user) => {
               return (
                 <div className={styles.userInfo} key={user.id}>
-                  <GridColumn size={1} offset={0}>
+                  <GridColumn size={2} offset={0}>
                     <div className={styles.avatar}>
                       <img
                         // src={user.avatar}
@@ -39,7 +37,7 @@ class SearchUsers extends React.Component {
                       />
                       {user.subscribe ? (
                         <Button
-                          className={styles.UnsubscribeBtn}
+                          className={styles.unsubscribeBtn}
                           onClick={() => {
                             this.props.toggleSubscribe(user.id);
                           }}
@@ -48,7 +46,7 @@ class SearchUsers extends React.Component {
                         </Button>
                       ) : (
                         <Button
-                          className={styles.SubscribeBtn}
+                          className={styles.subscribeBtn}
                           onClick={() => {
                             this.props.toggleSubscribe(user.id);
                           }}
@@ -58,13 +56,13 @@ class SearchUsers extends React.Component {
                       )}
                     </div>
                   </GridColumn>
-                  <GridColumn size={11} offset={0}>
+                  <GridColumn size={10} offset={0}>
                     <div className={styles.usersInfo}>
-                      <div>
+                      <div className={styles.userInfoTop}>
                         <span>{`${user.name} ${user.secondName}`}</span>
                         <span>country</span>
                       </div>
-                      <div>
+                      <div className={styles.userInfoBottom}>
                         <span>Status</span>
                         <span>City</span>
                       </div>
@@ -76,7 +74,7 @@ class SearchUsers extends React.Component {
           </GridRow>
         </GridContainer>
         <div className={styles.showBtn}>
-          <Button>Show More...</Button>
+          <Button className={styles.subscribeBtn}>Show More...</Button>
         </div>
       </div>
     );
