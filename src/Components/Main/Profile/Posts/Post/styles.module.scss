@@ -1,13 +1,27 @@
+.container {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #f0f0f0;
+  background-color: #9cd8ec;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+}
+
 .avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 5px 1px grey;
+  margin-right: 20px;
 }
 
-.post {
-  margin: 20px 0;
-  color: #f0f0f0;
-  background-color: #9cd8ec;
+.likes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 5px;
 }

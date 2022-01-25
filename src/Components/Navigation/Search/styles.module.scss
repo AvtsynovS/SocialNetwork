@@ -31,7 +31,30 @@
 .showBtn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 20px;
+  padding: 0 25px;
+  width: 100%;
+
+  .pageNumbers {
+    display: flex;
+
+    Button {
+      color: #c1dd7b;
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+      font-size: medium;
+    }
+
+    .selectedPage {
+      font-weight: 700;
+    }
+  }
+
+  .pageNumbers Button {
+    margin-right: 5px;
+  }
 }
 
 .userInfo {
@@ -63,6 +86,7 @@ button {
   font-weight: 700;
   color: #1c5c0a;
   background: linear-gradient(to top, #c6e081, #a5cd5b);
+  min-width: 125px; // временно
 }
 
 .unsubscribeBtn {

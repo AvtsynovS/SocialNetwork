@@ -10,7 +10,7 @@ import Setting from './Components/Main/Setting/Setting';
 import { Route, Switch } from 'react-router';
 import NotFound from './Components/Main/NotFound/NotFound';
 import DialogsContainer from './Components/Main/Dialogs/DialogsContainer';
-import SearchContainer from './Components/Navigation/Search/SearchContainer';
+import SearchUsersContainer from './Components/Navigation/Search/SearchUsersContainer';
 
 const App = (props) => {
   return (
@@ -33,7 +33,7 @@ const App = (props) => {
               <Route path='/news' component={News} />
               <Route path='/music' component={Music} />
               <Route path='/setting' component={Setting} />
-              <Route path='/search' render={() => <SearchContainer />} />
+              <Route path='/search' render={() => <SearchUsersContainer />} />
               <Route path='*' component={NotFound} />
             </Switch>
           </GridColumn>
