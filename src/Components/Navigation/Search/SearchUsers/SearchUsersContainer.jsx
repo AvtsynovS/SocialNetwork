@@ -6,7 +6,7 @@ import {
   setUsers,
   setTotalUsersCount,
   toggleSubscribe,
-} from '../../../redux/searchReducer';
+} from '../../../../redux/searchReducer';
 import SearchUsers from './SearchUsers';
 
 class SearchUsersContainer extends React.Component {
@@ -36,10 +36,10 @@ class SearchUsersContainer extends React.Component {
     return (
       <SearchUsers
         users={this.props.users}
-        toggleSubscribe={this.props.toggleSubscribe}
         pageSize={this.props.pageSize}
         totalUsersCount={this.props.totalUsersCount}
         currentPage={this.props.currentPage}
+        toggleSubscribe={this.props.toggleSubscribe}
         onPageChanged={this.onPageChanged}
       />
     );

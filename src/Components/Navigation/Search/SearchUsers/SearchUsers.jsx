@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../../../ui/Button/Button';
-import { GridColumn, GridContainer, GridRow } from '../../../ui/Grid';
-import userPhoto from '../../../images/men.png';
+import Button from '../../../../ui/Button/Button';
+import { GridColumn, GridContainer, GridRow } from '../../../../ui/Grid';
+import userPhoto from '../../../../images/men.png';
 import styles from './styles.module.scss';
 
 const SearchUsers = (props) => {
@@ -23,7 +23,6 @@ const SearchUsers = (props) => {
                 <GridColumn size={2} offset={0}>
                   <div className={styles.avatar}>
                     <img
-                      // src={user.avatar}
                       src={
                         user.photos.small != null
                           ? user.photos.small
@@ -78,7 +77,7 @@ const SearchUsers = (props) => {
                     className={
                       props.currentPage === page && styles.selectedPage
                     }
-                    onClick={(event) => {
+                    onClick={() => {
                       props.onPageChanged(page);
                     }}
                   >
