@@ -55,26 +55,11 @@ let mapStateToProps = (state) => {
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    toggleSubscribe: (userId) => {
-      dispatch(toggleSubscribe(userId));
-    },
-    setUsers: (users) => {
-      dispatch(setUsers(users));
-    },
-    setCurrentPage: (currentPage) => {
-      dispatch(setCurrentPage(currentPage));
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCount(totalCount));
-    },
-  };
-};
-
-const SearchContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SearchUsersContainer);
+const SearchContainer = connect(mapStateToProps, {
+  toggleSubscribe,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+})(SearchUsersContainer);
 
 export default SearchContainer;
