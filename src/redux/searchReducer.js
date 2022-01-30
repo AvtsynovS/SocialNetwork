@@ -3,12 +3,14 @@ const TOGGLE_SUBSCRIBE = 'TOGGLE_SUBSCRIBE';
 const SHOW_MORE = 'SHOW_MORE';
 const SET_CURRENT_PAGE = ' SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+const TOGGLE_LOADER = 'TOGGLE_LOADER';
 
 let initialState = {
   users: [],
   pageSize: 8,
   totalUsersCount: 0,
   currentPage: 1,
+  isLoader: false,
 };
 
 const searchReducer = (state = initialState, action) => {
@@ -38,6 +40,11 @@ const searchReducer = (state = initialState, action) => {
         ...state,
         totalUsersCount: action.totalUsersCount,
       };
+    case TOGGLE_LOADER:
+      return {
+        ...state,
+        isLoader: action.isLoader,
+      };
     default:
       return state;
   }
@@ -53,6 +60,7 @@ export const setTotalUsersCount = (totalUsersCount) => ({
   type: SET_TOTAL_USERS_COUNT,
   totalUsersCount,
 });
+export const toggleLoader = (isLoader) => ({ type: TOGGLE_LOADER, isLoader });
 export const showMore = () => ({ type: SHOW_MORE });
 
 export default searchReducer;
