@@ -65,12 +65,10 @@ let mapStateToProps = (state) => {
   };
 };
 
-const SearchContainer = connect(mapStateToProps, {
+export default connect(mapStateToProps, {
   toggleSubscribe,
   setUsers,
   setCurrentPage,
   setTotalUsersCount,
   toggleLoader,
 })(SearchUsersContainer);
-
-export default SearchContainer;

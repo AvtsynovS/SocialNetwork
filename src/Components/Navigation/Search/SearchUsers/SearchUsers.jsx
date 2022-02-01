@@ -3,6 +3,7 @@ import Button from '../../../../ui/Button/Button';
 import { GridColumn, GridContainer, GridRow } from '../../../../ui/Grid';
 import userPhoto from '../../../../images/men.png';
 import styles from './styles.module.scss';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const SearchUsers = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -22,15 +23,17 @@ const SearchUsers = (props) => {
               <div className={styles.userInfo} key={user.id}>
                 <GridColumn size={2} offset={0}>
                   <div className={styles.avatar}>
-                    <img
-                      src={
-                        user.photos.small != null
-                          ? user.photos.small
-                          : userPhoto
-                      }
-                      alt='avatar'
-                      className={styles.image}
-                    />
+                    <NavLink to={'/profile/' + user.id}>
+                      <img
+                        src={
+                          user.photos.small != null
+                            ? user.photos.small
+                            : userPhoto
+                        }
+                        alt='avatar'
+                        className={styles.image}
+                      />
+                    </NavLink>
                     {user.subscribe ? (
                       <Button
                         className={styles.unsubscribeBtn}
