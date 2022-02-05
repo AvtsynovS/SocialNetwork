@@ -30,14 +30,20 @@
 }
 .showBtn {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin: 0 20px;
   padding: 0 25px;
   width: 100%;
 
+  & Button {
+    margin-bottom: 10px;
+  }
+
   .pageNumbers {
     display: flex;
+    flex-wrap: wrap;
 
     Button {
       color: #c1dd7b;
