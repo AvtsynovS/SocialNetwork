@@ -1,0 +1,37 @@
+.container {
+  // width: 200px;
+  // height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #445854;
+  color: #fff;
+  height: 100%;
+}
+
+.singInForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid red;
+
+  & input {
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 25px;
+    background: linear-gradient(to top, #cfdfa3, #b2cc80);
+  }
+
+  .singInButton {
+    border-radius: 25px;
+    margin: 5px;
+    padding: 5px 18px;
+    font-weight: 700;
+    color: #1c5c0a;
+    background: linear-gradient(to top, #c6e081, #a5cd5b);
+  }
+}
